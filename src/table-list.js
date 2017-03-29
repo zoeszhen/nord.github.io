@@ -7,21 +7,23 @@ import { InputCmp } from './input-cmp';
 export class TableList extends React.Component{
   constructor(props){
     super(props);
-    let init = require("./data.json");
-    
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.cancel = this.cancel.bind(this);
     this.sort = this.sort.bind(this);
 
     this.state = {
-      userList: init,
+      //generate 20 users with json
+      //need little tweaks
+      userList: require("./data.json"),
       editModeId:""
     };
-
+    //point whether it is asc or deasc
     this.asc = true;
   }
-  
+
+  //delete the user from list
   handleDelete(item) {
 
     let index = this.state.userList.indexOf(item);
@@ -29,15 +31,15 @@ export class TableList extends React.Component{
     this.setState({ userList: this.state.userList });
     return;
   }
-
+  // change to the edit mode
   changeEditMode(item){
     this.setState({ editModeId: item.id });
   }
-
+  //cancel the edit session
   cancel() {
     this.setState({ editModeId: "" });
   }
-
+  //render the not edit mode list
   normalList(item){
     return(
            <div className="result-list-body" key={item.id}>
@@ -57,22 +59,23 @@ export class TableList extends React.Component{
             </div>
            </div>)
   }
-
+  //render list input
   editList(item){
     return(
     <InputCmp item={item} cancel={this.cancel} handleEdit={this.handleEdit} />
       );
   }
-
+  //add item to user list
   handleSubmit(item) {
     this.setState((prevState) => ({
       userList: [item].concat(prevState.userList),
       editModeId: ""
     }));
   }
-
+  //handle edit 
   handleEdit(item) {
     let tempUserList = [].concat(this.state.userList);
+    //find the correct id insert the new data
     let element = tempUserList.find( x =>{
         return x.id === item.id
       });

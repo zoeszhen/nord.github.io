@@ -116,7 +116,8 @@ export class InputCmp extends React.Component{
 				         );
 	 		}
  	}
-
+ 	
+ 	//cancel the edit
  	cancel(){
  		this.setState()
  	}
