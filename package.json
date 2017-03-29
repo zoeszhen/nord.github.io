@@ -10,7 +10,8 @@
     "react-icons": "^2.2.3"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "reactable": "^0.14.1"
   },
   "scripts": {
     "start": "react-scripts start",

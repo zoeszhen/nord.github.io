@@ -2,7 +2,7 @@ h1{
   font-size: 20;
   color: #505050;
 }
-.App {
+.app {
   text-align: left;
   padding: 0px 50px;
   font-size: 16px;
@@ -51,6 +51,19 @@ h1{
   font-size: 16px;
   border: none;
   color: #505050;
+}
+.input-section > form > .edit-group{
+  display: inline-block;
+  vertical-align: middle;
+}
+.input-section > form > .edit-group > button{
+  float: right;
+  background:#EDEDED;
+  padding:16px;
+  font-size: 16px;
+  border: none;
+  color: #505050;
+  margin-right: 20px;
 }
 
 .list-result{
