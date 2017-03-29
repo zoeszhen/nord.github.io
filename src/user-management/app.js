@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from '../image/logo.svg';
 import {TableList} from './table-list'
-import './app.css';
+import '../style/app.css';
 /*
 Present the title of table,compose all components no functions needed
 */
