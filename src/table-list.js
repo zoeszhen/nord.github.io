@@ -1,12 +1,13 @@
 import React, {Component}from 'react';
 import Mddelete from 'react-icons/lib/md/delete';
 import Mdedit from 'react-icons/lib/md/edit';
-import MdArrowDownward from "react-icons/lib/md/arrow-downward";
-import MdArrowUpward from"react-icons/lib/md/arrow-upward"
+import MdarrowDown from 'react-icons/lib/md/arrow-downward';
+import MdarrowUp from 'react-icons/lib/md/arrow-upward';
+
 import { InputCmp } from './input-cmp';
 
 
-export class TableList extends React.Component{
+export class TableList extends Component{
   constructor(props){
     super(props);
 
@@ -14,7 +15,6 @@ export class TableList extends React.Component{
     this.handleEdit = this.handleEdit.bind(this);
     this.cancel = this.cancel.bind(this);
     this.sort = this.sort.bind(this);
-    this.arrowChecker = this.arrowChecker.bind(this);
 
     this.state = {
       //generate 20 users with json
@@ -22,8 +22,8 @@ export class TableList extends React.Component{
       userList: require("./data.json"),
       editModeId:""
     };
-    //indicate sort direction
-    this.direction = { name: "", upward: false };
+    //point whether it is asc or deasc
+    this.asc = true;
   }
 
   //delete the user from list
@@ -104,7 +104,7 @@ export class TableList extends React.Component{
         return 1;
       }
 
-      // must be equal
+      // names must be equal
       return 0;
     };
 
@@ -118,32 +118,20 @@ export class TableList extends React.Component{
         return -1;
       }
 
-      // must be equal
+      // names must be equal
       return 0;
     };
 
-    if (this.direction.upward) {
+    if (this.asc) {
          tempUserList.sort(ascending);
     }else{
       tempUserList.sort(descending);
     }
 
-    this.direction.upward = !this.direction.upward;
-    this.direction.name = field;
+    this.asc = !this.asc;
     
     this.setState({ userList: tempUserList});
-  }
-  
-  //check sort data and direction
-  arrowChecker(field){
-    if (field !== this.direction.name){
-      return;
-    }
-    if (!this.direction.upward){
-      return (< MdArrowDownward />)
-    }else{
-      return (< MdArrowUpward />)
-    }
+    return (<MdarrowUp />);
   }
 
   render() {
@@ -154,13 +142,19 @@ export class TableList extends React.Component{
           <div className="list-body-title">
           <span className="result-name" onClick={() => {
             this.sort('name');
-          }}>Name{this.arrowChecker('name')}</span>
+            }}><MdarrowUp />
+            Nameilio
+          </span>
           <span className="result-email" onClick={() => {
             this.sort('email');
-          }}>Email{this.arrowChecker('email')}</span>
+          }}>
+            Email
+          </span>
           <span onClick={() => {
             this.sort('number');
-          }}>Phone Number{this.arrowChecker('number')}</span>
+          }}>  
+            Phone Number
+          </span>
           </div>
           {this.state.userList.map(item => (
             this.state.editModeId !== item.id ? this.normalList(item) : this.editList(item)         
