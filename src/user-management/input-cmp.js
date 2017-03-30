@@ -12,8 +12,6 @@ export class InputCmp extends React.Component{
 		this.submit = this.submit.bind(this);
 		this.editChecker = this.editChecker.bind(this);
 
-		
-
 		this.init();
 	}
 

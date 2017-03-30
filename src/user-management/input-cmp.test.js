@@ -1,16 +1,18 @@
 import React from 'react';
 import {InputCmp} from '../input-cmp';
+import {shallow} from 'enzyme';
 import renderer from 'react-test-renderer';
 import ReactDOM from 'react-dom';
+// import sinon from 'sinon';
 // const metaData=require("./data.json");
 
 describe('InputCmp', () => {
-	it('renders without crashing', () => {
+	
+	it('should renders without crashing', () => {
 		//prepare
-		let compenent= renderer.create(<InputCmp/>).toJSON();
+		const component= renderer.create(<InputCmp/>).toJSON();
 		//check
-		expect(compenent).toMatchSnapshot();
+		expect(component).toMatchSnapshot();
 	});
 
-	it("")
 });

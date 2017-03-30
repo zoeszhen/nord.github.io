@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InputCmp renders without crashing 1`] = `
+exports[`InputCmp should renders without crashing 1`] = `
 <div
   className="input-section"
 >
