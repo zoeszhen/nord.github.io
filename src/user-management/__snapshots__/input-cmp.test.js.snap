@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputCmp renders without crashing 1`] = `
+<div
+  className="input-section"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Full Name"
+      value=""
+    />
+    <input
+      className="email"
+      onChange={[Function]}
+      placeholder="Email Address"
+      value=""
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Phone Number"
+      value=""
+    />
+    <button>
+      Add new
+    </button>
+  </form>
+</div>
+`;
