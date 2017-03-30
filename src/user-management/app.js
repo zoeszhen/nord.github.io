@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div className="app">
         <div className="list-header">
-          <img src={logo} className="company-logo" alt="logo" />
+          <img src="https://nordsoftware.github.io/assets/nordlogo.svg" className="company-logo" alt="logo" />
         </div>
         <div className="list-body">
           <h1 className="body-title">List of Participants</h1>

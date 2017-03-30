@@ -110,8 +110,8 @@ export class InputCmp extends Component{
 	 		}else{
 				  return (
 					<div className="edit-group">
-				  	 <button onClick={this.props.cancel}>Cancel</button>
-					 <button onClick={this.submit}>Save</button>
+				  	 <button onClick={this.props.cancel} className="cancel">Cancel</button>
+					 <button onClick={this.submit} className="save">Save</button>
 				  </div>
 				         );
 	 		}

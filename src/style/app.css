@@ -4,29 +4,75 @@ h1{
 }
 .app {
   text-align: left;
-  padding: 0px 50px;
+  padding: 0px 472px;
   font-size: 16px;
+  min-width: 976px;
   color: #505050;
 }
+/*list header*/
 .list-header {
   background-color: #ABB5BD;
   padding: 32px;
   color: white;
 } 
-
+/*logo in the header*/
 .company-logo {
   left: 32px;
   height: 32px;
-  width: 32px;
 }
 
+/*list body*/
 .list-body {
   background: #F1F1F1;
   padding:32px;
 }
+ /*showing the list result*/
+.list-body-title{
+  padding: 16px 24px;
+  border-bottom:#F1F1F1 1px solid;
+  cursor: pointer;
+}
+.result-list-body{
+  padding: 24px 24px;
+  border-bottom:#F1F1F1 1px solid;
+  line-height: 24px;
+}
+/* the column of list*/
 .list-body > .body-title{
     padding:40px 0px;
 }
+/*result style*/
+.list-result{
+  background: white;
+  margin-top: 10px;
+}
+
+.result-name{
+  display: inline-block;
+  width: 24%;
+}
+
+.result-email{
+  display: inline-block;
+  width: 36%;
+}
+
+
+.result-list-body > .input-item{
+  display: inline;
+}
+
+.result-list-body > .edit-set{
+  display: inline-block;
+  float: right;
+  text-align: right;
+  font-size: 16px;
+}
+.result-list-body > .edit-set >.icon{
+  margin-left: 30px;
+}
+
+/*input component*/
 .input-section{
   background: white;
   padding: 16px;
@@ -45,72 +91,40 @@ h1{
 }
 
 .input-section > form > button{
-  float: right;
-  background:#EDEDED;
-  padding:16px;
-  font-size: 16px;
-  border: none;
-  color: #505050;
+    background: #EDEDED;
+    padding: 11px;
+    font-size: 16px;
+    border: none;
+    color: #505050;
+    float:right;
+    cursor: pointer;
 }
 .input-section > form > .edit-group{
   display: inline-block;
   vertical-align: middle;
+  float: right
 }
 .input-section > form > .edit-group > button{
-  float: right;
   background:#EDEDED;
-  padding:16px;
+  padding:11px;
   font-size: 16px;
   border: none;
   color: #505050;
-  margin-right: 20px;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
-.list-result{
-  background: white;
-  margin-top: 10px;
-}
-
-.result-name{
-  display: inline-block;
-  width: 23%;
-}
-
-.result-email{
-  display: inline-block;
-  width: 33%;
-}
-
-.list-body-title{
-  padding: 24px;
-  border-bottom:#F1F1F1 1px solid;
-}
-.result-list-body{
-  padding: 27px 24px;
-  border-bottom:#F1F1F1 1px solid;
-}
-.result-list-body > .input-item{
-  display: inline;
-}
-
-.result-list-body > .edit-set{
-  display: inline-block;
-  width: 30%;
-  text-align: right;
-  font-size: 16px;
-}
-.result-list-body > .edit-set >.icon{
-  margin-left: 20px;
-}
+/*golbal style*/
 .error-msg{
   color: red;
   font-weight: 500;
 }
-.App-intro {
-  font-size: large;
+
+.save{
+  background: #07f;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.cancel{
+  color: #07f;
 }
