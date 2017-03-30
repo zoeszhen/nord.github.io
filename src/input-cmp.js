@@ -57,7 +57,7 @@ export class InputCmp extends Component{
 	//validate all input information
 	inputValidation() {
 		let errorCollector = "Please provide:";
-		// var phoneRex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+		var phoneRex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
 		if (this.state.name.length < 5) {
 			//compose error if lenght of name less than 5
 			errorCollector = errorCollector.concat(" Name ");
@@ -66,7 +66,7 @@ export class InputCmp extends Component{
 			//compose error if email address is not contains @
 			errorCollector = errorCollector.concat(" Email ");
 		}
-		if (!this.state.number) {
+		if (!phoneRex.test(Number(this.state.number))) {
 			errorCollector = errorCollector.concat(" Number ");
 		}
 		if (errorCollector === "Please provide:") {
@@ -128,7 +128,7 @@ export class InputCmp extends Component{
 			<form onSubmit={this.submit}>
 		      <input onChange={this.handleChangeName} value={this.state.name} placeholder="Full Name"/>
 		      <input className="email" onChange={this.handleChangeEmail} value={this.state.email} placeholder="Email Address" />
-		      <input onChange={this.handleChangeNumber} value={this.state.number} placeholder="Phone Number" />
+			  <input type="number" onChange={this.handleChangeNumber} value={this.state.number} placeholder="Phone Number"  />
 			  {this.editChecker()}
 		    </form>
 			{!!this.state.errorMsg ? <p className="error-msg">{this.state.errorMsg}</p> : null}

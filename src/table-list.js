@@ -65,7 +65,7 @@ export class TableList extends Component{
   //render list input
   editList(item){
     return(
-    <InputCmp item={item} cancel={this.cancel} handleEdit={this.handleEdit} />
+    <InputCmp key={item.id} item={item} cancel={this.cancel} handleEdit={this.handleEdit} />
       );
   }
   //add item to user list
@@ -143,7 +143,7 @@ export class TableList extends Component{
           <span className="result-name" onClick={() => {
             this.sort('name');
             }}><MdarrowUp />
-            Nameilio
+            Name
           </span>
           <span className="result-email" onClick={() => {
             this.sort('email');

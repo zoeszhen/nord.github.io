@@ -17,19 +17,18 @@ export class InputCmp extends React.Component{
 
 	//init the state
 	init(){
-		console.log("this.props.item", this.props.item);
 		if(!!this.props.item){
 			this.state = {
 				name: this.props.item.name,
 				id: this.props.item.id,
 				number: this.props.item.number,
-				// email: this.props.item.email,
+				email: this.props.item.email,
 				errorMsg: ""
 			};
 		}else{
 			this.state = {
 				name: "",
-				// id: "",
+				id: "",
 				number: "",
 				email: "",
 				errorMsg: ""
@@ -55,7 +54,8 @@ export class InputCmp extends React.Component{
 	//validate all input information
 	inputValidation() {
 		let errorCollector = "Please provide:";
-		// var phoneRex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+		 var phoneRex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+		 console.log(phoneRex.test(Number(this.state.number)));
 		if (this.state.name.length < 5) {
 			//compose error if lenght of name less than 5
 			errorCollector = errorCollector.concat(" Name ");
@@ -65,6 +65,7 @@ export class InputCmp extends React.Component{
 			errorCollector = errorCollector.concat(" Email ");
 		}
 		if (!this.state.number) {
+			
 			errorCollector = errorCollector.concat(" Number ");
 		}
 		if (errorCollector === "Please provide:") {
