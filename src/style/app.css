@@ -104,6 +104,7 @@ h1{
   vertical-align: middle;
   float: right
 }
+
 .input-section > form > .edit-group > button{
   background:#EDEDED;
   padding:11px;
@@ -121,8 +122,8 @@ h1{
 }
 
 .save{
-  background: #07f;
-  color: white;
+  background: #07f !important;
+  color: white !important;
 }
 
 .cancel{

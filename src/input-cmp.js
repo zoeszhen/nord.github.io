@@ -106,7 +106,7 @@ export class InputCmp extends Component{
 	//render the edit function
  	editChecker(){
 		  if (!this.state.id) {
-				  return (<button>Add new</button>);
+				  return (<button className="cancel">Add new</button>);
 	 		}else{
 				  return (
 					<div className="edit-group">

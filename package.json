@@ -2,6 +2,7 @@
   "name": "nord",
   "version": "0.1.0",
   "private": true,
+   "nord": "http://nord.github.io/nord",
   "dependencies": {
     "file-loader": "^0.10.1",
     "react": "^15.4.2",
