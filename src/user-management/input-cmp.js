@@ -92,6 +92,12 @@ export class InputCmp extends React.Component{
 			if (!this.state.id){
 				item.id = Date.now();
 				this.props.handleSubmit(item);
+				this.setState({
+					name:"",
+					number:"",
+					email:"",
+					id:""
+				})
 			}else{
 				//this is the edit item
 				item.id = this.state.id;
