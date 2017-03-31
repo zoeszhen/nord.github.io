@@ -4,10 +4,10 @@ h1{
 }
 .app {
   text-align: left;
-  padding: 0px 472px;
   font-size: 16px;
-  min-width: 976px;
+  width: 976px;
   color: #505050;
+  margin: auto;
 }
 /*list header*/
 .list-header {
@@ -67,6 +67,7 @@ h1{
   float: right;
   text-align: right;
   font-size: 16px;
+  cursor: pointer;
 }
 .result-list-body > .edit-set >.icon{
   margin-left: 30px;
@@ -99,13 +100,14 @@ h1{
     float:right;
     cursor: pointer;
 }
-.input-section > form > .edit-group{
+
+.edit-group{
   display: inline-block;
   vertical-align: middle;
   float: right
 }
 
-.input-section > form > .edit-group > button{
+.edit-group >button{
   background:#EDEDED;
   padding:11px;
   font-size: 16px;
@@ -122,10 +124,10 @@ h1{
 }
 
 .save{
-  background: #07f !important;
+  background-color: #07f !important;
   color: white !important;
 }
 
 .cancel{
-  color: #07f;
+  color: #07f !important;
 }

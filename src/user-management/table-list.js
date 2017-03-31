@@ -1,4 +1,4 @@
-import React, {Component}from 'react';
+import React from 'react';
 import Mddelete from 'react-icons/lib/md/delete';
 import Mdedit from 'react-icons/lib/md/edit';
 import MdArrowDownward from "react-icons/lib/md/arrow-downward";
@@ -66,7 +66,7 @@ export class TableList extends React.Component{
   //render list input
   editList(item){
     return(
-    <InputCmp item={item} cancel={this.cancel} handleEdit={this.handleEdit} />
+    <InputCmp key={item.id} item={item} cancel={this.cancel} handleEdit={this.handleEdit} />
       );
   }
   //add item to user list

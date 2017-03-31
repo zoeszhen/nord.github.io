@@ -13,6 +13,9 @@ export class InputCmp extends Component{
 		this.editChecker = this.editChecker.bind(this);
 
 		
+		const divStyle = {
+			color: 'blue'
+		};
 
 		this.init();
 	}
@@ -106,12 +109,12 @@ export class InputCmp extends Component{
 	//render the edit function
  	editChecker(){
 		  if (!this.state.id) {
-				  return (<button className="cancel">Add new</button>);
+				  return (<button>Add new</button>);
 	 		}else{
 				  return (
 					<div className="edit-group">
 				  	 <button onClick={this.props.cancel} className="cancel">Cancel</button>
-					 <button onClick={this.submit} className="save">Save</button>
+					 <button className="save" onClick={this.submit} >Save</button>
 				  </div>
 				         );
 	 		}
@@ -124,7 +127,7 @@ export class InputCmp extends Component{
 
 	render(){
 		return(
-	       <div className="input-section">
+		<div className="input-section">
 			<form onSubmit={this.submit}>
 		      <input onChange={this.handleChangeName} value={this.state.name} placeholder="Full Name"/>
 		      <input className="email" onChange={this.handleChangeEmail} value={this.state.email} placeholder="Email Address" />

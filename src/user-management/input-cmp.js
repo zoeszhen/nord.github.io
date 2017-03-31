@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export class InputCmp extends React.Component{
 	
@@ -54,8 +54,9 @@ export class InputCmp extends React.Component{
 	//validate all input information
 	inputValidation() {
 		let errorCollector = "Please provide:";
-		 var phoneRex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
-		 console.log(phoneRex.test(Number(this.state.number)));
+		 // var phoneRex = /^[\+]?[(]?[0]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+
+		 var phoneRex = /[0-9]{9,12}$/;
 		if (this.state.name.length < 5) {
 			//compose error if lenght of name less than 5
 			errorCollector = errorCollector.concat(" Name ");
@@ -64,7 +65,7 @@ export class InputCmp extends React.Component{
 			//compose error if email address is not contains @
 			errorCollector = errorCollector.concat(" Email ");
 		}
-		if (!this.state.number) {
+		if (!phoneRex.test(Number(this.state.number))) {
 			
 			errorCollector = errorCollector.concat(" Number ");
 		}
@@ -80,6 +81,7 @@ export class InputCmp extends React.Component{
 		let validationMsg = this.inputValidation();
 		//if there in no error msg return for input validation
 		if (validationMsg === undefined) {
+			this.setState({ errorMsg: "" })
 			//compose the new item
 			let item = {
 				name: this.state.name,
@@ -109,8 +111,8 @@ export class InputCmp extends React.Component{
 	 		}else{
 				  return (
 					<div className="edit-group">
-				  	 <button onClick={this.props.cancel}>Cancel</button>
-					 <button onClick={this.submit}>Save</button>
+				  	 <button onClick={this.props.cancel} className="cancel">Cancel</button>
+					 <button onClick={this.submit} className="save">Save</button>
 				  </div>
 				         );
 	 		}
