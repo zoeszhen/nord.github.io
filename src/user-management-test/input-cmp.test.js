@@ -1,5 +1,5 @@
 import React from 'react';
-import {InputCmp} from '../input-cmp';
+import {InputCmp} from '../user-management/input-cmp';
 import {shallow} from 'enzyme';
 import renderer from 'react-test-renderer';
 import ReactDOM from 'react-dom';
