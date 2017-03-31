@@ -5,8 +5,6 @@ import MdArrowDownward from "react-icons/lib/md/arrow-downward";
 import MdArrowUpward from"react-icons/lib/md/arrow-upward"
 import { InputCmp } from './input-cmp';
 
-const metaData = require("./data.json");
-
 export class TableList extends React.Component{
   constructor(props){
     super(props);
@@ -19,7 +17,7 @@ export class TableList extends React.Component{
     this.state = {
       //generate 20 users with json
       //need little tweaks
-      userList: metaData,
+      userList: require("./data.json"),
       editModeId:""
     };
      
